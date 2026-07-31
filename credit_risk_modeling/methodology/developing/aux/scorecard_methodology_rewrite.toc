@@ -1,0 +1,66 @@
+\contentsline {section}{\numberline {1}Documentation and Audit trail}{5}{}%
+\contentsline {section}{\numberline {2}Study Dataset Definition and Preparation}{6}{}%
+\contentsline {subsection}{\numberline {2.1}Objectives and Governance}{6}{}%
+\contentsline {subsection}{\numberline {2.2}Data Extraction and Preparation}{6}{}%
+\contentsline {subsection}{\numberline {2.3}Study Population}{6}{}%
+\contentsline {subsection}{\numberline {2.4}Variable Assessment}{7}{}%
+\contentsline {subsection}{\numberline {2.5}Target Definition}{8}{}%
+\contentsline {subsection}{\numberline {2.6}Observation Window}{8}{}%
+\contentsline {subsection}{\numberline {2.7}Development and Validation Samples}{9}{}%
+\contentsline {subsection}{\numberline {2.8}Dataset Quality Summary}{9}{}%
+\contentsline {section}{\numberline {3}Study dataset definition and preparation}{9}{}%
+\contentsline {subsection}{\numberline {3.1}Purpose and auditability principles}{9}{}%
+\contentsline {subsection}{\numberline {3.2}Data Extraction and Initial Dataset Construction}{10}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Initial dataset definition}{10}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Source systems and extraction}{10}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Transformations and joins}{11}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}Data issues and impact analysis}{11}{}%
+\contentsline {subsection}{\numberline {3.3}Study Scope and Intended Use of the Score}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Score purpose and business objectives}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Deployment constraints and application perimeter}{12}{}%
+\contentsline {subsection}{\numberline {3.4}Observation Perimeter and Exclusion Criteria}{13}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Perimeter exclusions}{13}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Statistical independence assumption}{14}{}%
+\contentsline {subsection}{\numberline {3.5}Initial Variable Analysis and Selection}{14}{}%
+\contentsline {subsubsection}{\numberline {3.5.1}Variable inventory and selection table}{14}{}%
+\contentsline {subsection}{\numberline {3.6}Data Coherence, Quality and Compliance Assessment}{14}{}%
+\contentsline {subsubsection}{\numberline {3.6.1}Coherence checks}{14}{}%
+\contentsline {subsubsection}{\numberline {3.6.2}Operational and control constraints}{15}{}%
+\contentsline {subsubsection}{\numberline {3.6.3}Regulatory and privacy constraints}{15}{}%
+\contentsline {subsubsection}{\numberline {3.6.4}Missing values handling}{16}{}%
+\contentsline {subsection}{\numberline {3.7}Risk Indicator Definition and Computation}{16}{}%
+\contentsline {subsection}{\numberline {3.8}Target Definition (Risk Criterion)}{17}{}%
+\contentsline {subsubsection}{\numberline {3.8.1}Target definition principles}{17}{}%
+\contentsline {subsubsection}{\numberline {3.8.2}Single-criterion requirement}{17}{}%
+\contentsline {subsubsection}{\numberline {3.8.3}Convention}{18}{}%
+\contentsline {subsection}{\numberline {3.9}Definition of the Observation and Modelling Time Window}{18}{}%
+\contentsline {subsubsection}{\numberline {3.9.1}Validation of target and time-window definitions}{18}{}%
+\contentsline {subsubsection}{\numberline {3.9.2}Revolving credit specificities}{19}{}%
+\contentsline {subsection}{\numberline {3.10}Loan Class Definition and Population Structuring}{19}{}%
+\contentsline {subsubsection}{\numberline {3.10.1}Loan population classification}{19}{}%
+\contentsline {subsubsection}{\numberline {3.10.2}Rejection rules evolution and simulation}{20}{}%
+\contentsline {subsection}{\numberline {3.11}Development and Validation Dataset Construction}{20}{}%
+\contentsline {subsection}{\numberline {3.12}Dataset Summary and Representativeness Overview}{20}{}%
+\contentsline {subsection}{\numberline {3.13}Baseline Metrics and Acceptance Monitoring}{21}{}%
+\contentsline {section}{\numberline {4}Reject Inference}{22}{}%
+\contentsline {subsection}{\numberline {4.1}Reject inference through expert policy engineering}{22}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Rationale}{22}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Scope and population split}{23}{}%
+\contentsline {subsubsection}{\numberline {4.1.3}General principle}{23}{}%
+\contentsline {subsubsection}{\numberline {4.1.4}Calculation method}{24}{}%
+\contentsline {subsubsection}{\numberline {4.1.5}Operational completion of the expert table}{25}{}%
+\contentsline {subsubsection}{\numberline {4.1.6}How to complete the expert table}{26}{}%
+\contentsline {subsubsection}{\numberline {4.1.7}Interpretation of the expert parameters}{26}{}%
+\contentsline {subsubsection}{\numberline {4.1.8}Monitoring of assumptions over time}{27}{}%
+\contentsline {subsubsection}{\numberline {4.1.9}Expert justification requirements}{28}{}%
+\contentsline {subsubsection}{\numberline {4.1.10}Relationship with the scoring-based reject inference approach}{29}{}%
+\contentsline {subsubsection}{\numberline {4.1.11}Archiving and governance}{29}{}%
+\contentsline {subsection}{\numberline {4.2}Reject inference through score-based modelling}{30}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Algorithm description}{30}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Implementation notes}{31}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Application perimeter}{31}{}%
+\contentsline {section}{\numberline {5}Cut-off}{32}{}%
+\contentsline {section}{\numberline {6}Paragraphe}{34}{}%
+\contentsline {subsection}{\numberline {6.1}Sous-Paragraphe}{35}{}%
+\contentsline {section}{\numberline {7}Annexe}{35}{}%
+\contentsline {subsection}{\numberline {7.1}Sous-Paragraphe}{35}{}%

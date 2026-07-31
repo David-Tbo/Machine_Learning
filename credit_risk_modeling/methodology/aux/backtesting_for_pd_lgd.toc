@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\contentsline {section}{\numberline {2}Seuils pour les étapes clé du back-test des modèles de PD}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Rappel : structure des modèles de PD}{7}{}%
+\contentsline {subsection}{\numberline {2.2}Les principales étapes du back-test}{8}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Étape préliminaire : constitution de la base de back-test}{8}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Étape 1 : structure de la population}{9}{}%
+\contentsline {subsubsection}{\numberline {2.2.3}Étape 2 : score de classement}{10}{}%
+\contentsline {subsubsection}{\numberline {2.2.4}Etape 3 : Mise en classes et calibrage}{14}{}%
+\contentsline {subsubsection}{\numberline {2.2.5}Etape 3.2 : Discrimination des Classes de Risque}{15}{}%
+\contentsline {subsection}{\numberline {2.3}Diagnostic général du back-test pour le modèle de PD}{18}{}%
+\contentsline {section}{\numberline {3}Seuils pour les étapes clé du back-test des taux de LGD}{21}{}%
+\contentsline {subsection}{\numberline {3.1}Structure d'un "modèle" de LGD}{21}{}%
+\contentsline {subsection}{\numberline {3.2}Principales étapes du back-test de la LGD}{23}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Etape préliminaire: constitution de la back de back-test}{23}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Etape 1 : évolution de la structure de la population}{24}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Etape 2: calcul du taux de pertes}{25}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}Etape 3 : calcul du taux de passage}{30}{}%
+\contentsline {subsection}{\numberline {3.3}Diagnostic général}{32}{}%
+\contentsline {section}{\numberline {4}Annexes}{35}{}%
+\contentsline {subsection}{\numberline {4.1}Déclinaison opérationnelle du BT des modèles de PD}{35}{}%
+\contentsline {subsection}{\numberline {4.2}Synthèse des étapes de contrôle pour les modèles de PD}{35}{}%
+\contentsline {subsection}{\numberline {4.3}Modèle de LGD en deux étapes et Calcul du taux de passage}{35}{}%

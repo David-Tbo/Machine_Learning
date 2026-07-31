@@ -1,0 +1,22 @@
+.DS_Store
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Work in progress
+backtesting_for_pd_lgd_models.pdf
+operational_backteting_for_pd_models.pdf
+pd_backtesting_benchmarking.pdf
+scorecard_methodology.pdf
+backtesting_thresholds.pdf
+backtesting_benchmarking.pdf
+
+# LaTeX
+*.tex
+*.aux
+*.log
+LaTeX/
+PPT/
+PDF/
