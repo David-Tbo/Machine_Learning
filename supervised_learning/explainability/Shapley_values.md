@@ -7,33 +7,25 @@ Pour bien comprendre les valeurs de Shapley, il est utile de rappeler quelques c
 
 ---
 ### **Combinaisons**
-En combinatoire, le symbole **$ C(n, k) $** ou **$ \binom{n}{k} $** représente le nombre de **combinaisons** de $ k $ éléments parmi $ n $ éléments, **sans tenir compte de l'ordre**.
+En combinatoire, le symbole **$C(n, k)$** ou **$\binom{n}{k}$** représente le nombre de **combinaisons** de $k$ éléments parmi $n $ éléments, **sans tenir compte de l'ordre**.
 La formule est :
-$$
-C(n, k) = \binom{n}{k} = \frac{n!}{k!(n-k)!}
-$$
+$$C(n, k) = \binom{n}{k} = \frac{n!}{k!(n-k)!}$$
 
 ---
 ### **Permutations**
-Quand **l'ordre compte**, on parle de **permutations**. Le nombre de permutations de $ k $ éléments parmi $ n $ est donné par :
-$$
-P(n, k) = \frac{n!}{(n-k)!}
-$$
+Quand **l'ordre compte**, on parle de **permutations**. Le nombre de permutations de $k$ éléments parmi $ n $ est donné par :
+$$P(n, k) = \frac{n!}{(n-k)!}$$
 
 ---
 ### **Nombre de sous-ensembles (parties)**
 Le nombre de **parties** (sous-ensembles) dans un ensemble à $ n $ éléments est :
-$$
-2^n
-$$
-*Exemple* : Pour un ensemble de 3 *features* $\{x_1, x_2, x_3\}$, il existe $ 2^3 = 8 $ sous-ensembles possibles (y compris l'ensemble vide).
+$$2^n$$
+*Exemple* : Pour un ensemble de 3 *features* $\{x_1, x_2, x_3\}$, il existe $2^3 = 8$ sous-ensembles possibles (y compris l'ensemble vide).
 
 ---
 ### **Factorielle**
-La factorielle d'un entier $ n $, notée $ n! $, est le produit de tous les entiers positifs inférieurs ou égaux à $ n $ :
-$$
-n! = n \times (n-1) \times \dots \times 1
-$$
+La factorielle d'un entier $n$, notée $n!$, est le produit de tous les entiers positifs inférieurs ou égaux à $n$ :
+$$n! = n \times (n-1) \times \dots \times 1$$
 
 ---
 
@@ -44,11 +36,11 @@ Les **valeurs de Shapley** sont une méthode d'interprétabilité des modèles d
 
 ### **Analogie avec la Théorie des Jeux**
 - Chaque *feature* est un **joueur** dans un jeu coopératif.
-- La **valeur de la coalition** $ v(S) $ représente la prédiction du modèle pour un sous-ensemble $ S $ de *features*.
-- La **contribution marginale** d'une *feature* $ i $ est la différence entre $ v(S \cup \{i\}) $ et $ v(S) $.
+- La **valeur de la coalition** $v(S)$ représente la prédiction du modèle pour un sous-ensemble $S$ de *features*.
+- La **contribution marginale** d'une *feature* $i$ est la différence entre $v(S \cup \{i\})$ et $v(S)$.
 
 ### **Formule Générale**
-La valeur de Shapley pour une *feature* $ i $ est définie comme la **moyenne pondérée des contributions marginales** sur toutes les permutations possibles des *features* :
+La valeur de Shapley pour une *feature* $i$ est définie comme la **moyenne pondérée des contributions marginales** sur toutes les permutations possibles des *features* :
 
 **En LaTeX :**  
 $$\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|! \times (|N| - |S| - 1)!}{|N|!} (v(S \cup \{i\}) - v(S))$$
@@ -67,12 +59,12 @@ $$\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|! \times (|N| - |S| 
 - $v(S)$: The value of the characteristic function $v$ for the coalition $S$ excluding player $i$.
 
 **Où :**
-- $ N $ : Ensemble de toutes les *features*.
-- $ S $ : Sous-ensemble de $ N $ **n'incluant pas** $ i $.
-- $ |S| $ : Taille du sous-ensemble $ S $.
-- $ |N| $ : Taille totale de l'ensemble $ N $.
-- $ v(S) $ : Valeur de la fonction de prédiction pour le sous-ensemble $ S $.
-- $ v(S \cup \{i\}) - v(S) $ : Contribution marginale de la *feature* $ i $ lorsqu'elle est ajoutée à $ S $.
+- $N$ : Ensemble de toutes les *features*.
+- $S$ : Sous-ensemble de $N$ **n'incluant pas** $i$.
+- $|S|$ : Taille du sous-ensemble $S$.
+- $|N|$ : Taille totale de l'ensemble $N$.
+- $v(S)$ : Valeur de la fonction de prédiction pour le sous-ensemble $S$.
+- $v(S \cup \{i\}) - v(S)$ : Contribution marginale de la *feature* $i$ lorsqu'elle est ajoutée à $S$.
 
 ---
 ### **Propriétés des Valeurs de Shapley**
@@ -107,40 +99,40 @@ Valeurs des coalitions
 Pour chaque permutation des joueurs, on calcule la contribution marginale de chaque joueur :
 
 1. **Permutation A, B, C** :
-   - A : $ v(\{A\}) - v(\emptyset) = 2 - 0 = 2 $
-   - B : $ v(\{A, B\}) - v(\{A\}) = 6 - 2 = 4 $
-   - C : $ v(\{A, B, C\}) - v(\{A, B\}) = 10 - 6 = 4 $
+   - A : $v(\{A\}) - v(\emptyset) = 2 - 0 = 2$
+   - B : $v(\{A, B\}) - v(\{A\}) = 6 - 2 = 4$
+   - C : $v(\{A, B, C\}) - v(\{A, B\}) = 10 - 6 = 4$
 
 2. **Permutation A, C, B** :
-   - A : $ 2 $
-   - C : $ v(\{A, C\}) - v(\{A\}) = 7 - 2 = 5 $
-   - B : $ v(\{A, B, C\}) - v(\{A, C\}) = 10 - 7 = 3 $
+   - A : $2$
+   - C : $v(\{A, C\}) - v(\{A\}) = 7 - 2 = 5$
+   - B : $v(\{A, B, C\}) - v(\{A, C\}) = 10 - 7 = 3$
 
 3. **Permutation B, A, C** :
-   - B : $ 3 $
-   - A : $ v(\{A, B\}) - v(\{B\}) = 6 - 3 = 3 $
-   - C : $ 4 $
+   - B : $3$
+   - A : $v(\{A, B\}) - v(\{B\}) = 6 - 3 = 3$
+   - C : $4$
 
 4. **Permutation B, C, A** :
-   - B : $ 3 $
-   - C : $ v(\{B, C\}) - v(\{B\}) = 8 - 3 = 5 $
-   - A : $ v(\{A, B, C\}) - v(\{B, C\}) = 10 - 8 = 2 $
+   - B : $3$
+   - C : $v(\{B, C\}) - v(\{B\}) = 8 - 3 = 5$
+   - A : $v(\{A, B, C\}) - v(\{B, C\}) = 10 - 8 = 2$
 
 5. **Permutation C, A, B** :
-   - C : $ 4 $
-   - A : $ v(\{A, C\}) - v(\{C\}) = 7 - 4 = 3 $
-   - B : $ 3 $
+   - C : $4$
+   - A : $v(\{A, C\}) - v(\{C\}) = 7 - 4 = 3$
+   - B : $3$
 
 6. **Permutation C, B, A** :
-   - C : $ 4 $
-   - B : $ v(\{B, C\}) - v(\{C\}) = 8 - 4 = 4 $
-   - A : $ 2 $
+   - C : $4$
+   - B : $ v(\{B, C\}) - v(\{C\}) = 8 - 4 = 4$
+   - A : $2$
 
 #### **Valeurs de Shapley**
 Les valeurs de Shapley sont la **moyenne des contributions marginales** sur toutes les permutations :
-- $ \phi_A = \frac{2 + 2 + 3 + 2 + 3 + 2}{6} = \frac{14}{6} = \frac{7}{3} $
-- $ \phi_B = \frac{4 + 3 + 3 + 3 + 3 + 4}{6} = \frac{20}{6} = \frac{10}{3} $
-- $ \phi_C = \frac{4 + 5 + 4 + 5 + 4 + 4}{6} = \frac{26}{6} = \frac{13}{3} $
+- $\phi_A = \frac{2 + 2 + 3 + 2 + 3 + 2}{6} = \frac{14}{6} = \frac{7}{3}$
+- $\phi_B = \frac{4 + 3 + 3 + 3 + 3 + 4}{6} = \frac{20}{6} = \frac{10}{3}$
+- $\phi_C = \frac{4 + 5 + 4 + 5 + 4 + 4}{6} = \frac{26}{6} = \frac{13}{3}$
 
 ---
 ---
@@ -150,7 +142,7 @@ Trois méthodes classiques utilisent les équations de la théorie des jeux coop
 ---
 ### **Shapley Regression Values**
 - **Description** : Ces valeurs mesurent l'importance des *features* pour les modèles linéaires en présence de multicolinéarité.
-- **Méthode** : Nécessite de réentraîner le modèle sur tous les sous-ensembles de *features* $ S \subseteq F $, où $ F $ est l'ensemble de toutes les *features*.
+- **Méthode** : Nécessite de réentraîner le modèle sur tous les sous-ensembles de *features* $S \subseteq F$, où $F$ est l'ensemble de toutes les *features*.
 - **Calcul** : Les valeurs de Shapley sont calculées comme une moyenne pondérée des différences de prédictions entre les modèles avec et sans chaque *feature*.
 - **Propriété** : Méthode additive d'attribution des *features*.
 
@@ -160,7 +152,7 @@ Trois méthodes classiques utilisent les équations de la théorie des jeux coop
 - **Méthode** :
   1. Applique des approximations d'échantillonnage à la formule des valeurs de Shapley.
   2. Approximation de l'effet de la suppression d'une variable en intégrant sur des échantillons du jeu de données d'entraînement.
-- **Avantage** : Évite de réentraîner le modèle et permet de calculer moins de $ 2^{|F|} $ différences.
+- **Avantage** : Évite de réentraîner le modèle et permet de calculer moins de $2^{|F|}$ différences.
 - **Propriété** : Méthode additive d'attribution des *features*.
 
 ---
@@ -191,36 +183,28 @@ Dataset de Régression Linéaire
 
 ### **Modèle de Régression Linéaire**
 Le modèle ajusté est :
-$$
-y = x_1 + x_2 + x_3
-$$
+$$y = x_1 + x_2 + x_3$$
 **Coefficients :**
-- $ \beta_0 = 0 $
-- $ \beta_1 = 1 $
-- $ \beta_2 = 1 $
-- $ \beta_3 = 1 $
+- $\beta_0 = 0$
+- $\beta_1 = 1$
+- $\beta_2 = 1$
+- $\beta_3 = 1$
 
 ---
 ### **Calcul des Valeurs de Shapley pour l'Observation 1**
-Pour l'observation **1** ($ x_1 = 1 $, $ x_2 = 2 $, $ x_3 = 3 $), les contributions marginales sont calculées comme suit :
+Pour l'observation **1** ($x_1 = 1 $, $ x_2 = 2 $, $ x_3 = 3$), les contributions marginales sont calculées comme suit :
 
 #### **Feature 1 (x₁)**
 Contribution marginale moyenne :
-$$
-\phi_{x_1} = \frac{1}{3} \left( 1 + 1 + 1 \right) = 1
-$$
+$$\phi_{x_1} = \frac{1}{3} \left( 1 + 1 + 1 \right) = 1$$
 
 #### **Feature 2 (x₂)**
 Contribution marginale moyenne :
-$$
-\phi_{x_2} = \frac{1}{3} \left( 2 + 2 + 2 \right) = 2
-$$
+$$\phi_{x_2} = \frac{1}{3} \left( 2 + 2 + 2 \right) = 2$$
 
 #### **Feature 3 (x₃)**
 Contribution marginale moyenne :
-$$
-\phi_{x_3} = \frac{1}{3} \left( 3 + 3 + 3 \right) = 3
-$$
+$$\phi_{x_3} = \frac{1}{3} \left( 3 + 3 + 3 \right) = 3$$
 
 ---
 ### **Résultat**
@@ -256,51 +240,41 @@ Dataset de Classification
 ---
 ### **Modèle de Classification (Régression Logistique)**
 Le modèle est défini par :
-$$
-\text{logit}(y) = -10 + x_1 + x_2 + x_3 + x_4
-$$
+$$\text{logit}(y) = -10 + x_1 + x_2 + x_3 + x_4$$
 **Coefficients :**
-- $ \beta_0 = -10 $
-- $ \beta_1 = 1 $
-- $ \beta_2 = 1 $
-- $ \beta_3 = 1 $
-- $ \beta_4 = 1 $
+- $\beta_0 = -10$
+- $\beta_1 = 1$
+- $\beta_2 = 1$
+- $\beta_3 = 1$
+- $\beta_4 = 1$
 
 ---
 ### **Calcul des Valeurs de Shapley pour l'Observation 1**
-Pour l'observation **1** ($ x_1 = 1 $, $ x_2 = 2 $, $ x_3 = 3 $, $ x_4 = 4 $), les contributions marginales sont calculées pour chaque *feature* en considérant tous les sous-ensembles possibles.
+Pour l'observation **1** ($x_1 = 1 $, $ x_2 = 2 $, $ x_3 = 3 $, $ x_4 = 4$), les contributions marginales sont calculées pour chaque *feature* en considérant tous les sous-ensembles possibles.
 
 #### **Feature 1 (x₁)**
 Contribution marginale moyenne :
-$$
-\phi_{x_1} = \frac{1}{4} \left( \text{logit}(-10 + 1) - \text{logit}(-10) + \text{logit}(-10 + 1 + 2) - \text{logit}(-10 + 2) + \text{logit}(-10 + 1 + 3) - \text{logit}(-10 + 3) + \text{logit}(-10 + 1 + 4) - \text{logit}(-10 + 4) \right)
-$$
+$$\phi_{x_1} = \frac{1}{4} \left( \text{logit}(-10 + 1) - \text{logit}(-10) + \text{logit}(-10 + 1 + 2) - \text{logit}(-10 + 2) + \text{logit}(-10 + 1 + 3) - \text{logit}(-10 + 3) + \text{logit}(-10 + 1 + 4) - \text{logit}(-10 + 4) \right)$$
 
 #### **Feature 2 (x₂)**
 Contribution marginale moyenne :
-$$
-\phi_{x_2} = \frac{1}{4} \left( \text{logit}(-10 + 2) - \text{logit}(-10) + \text{logit}(-10 + 1 + 2) - \text{logit}(-10 + 1) + \text{logit}(-10 + 2 + 3) - \text{logit}(-10 + 3) + \text{logit}(-10 + 2 + 4) - \text{logit}(-10 + 4) \right)
-$$
+$$\phi_{x_2} = \frac{1}{4} \left( \text{logit}(-10 + 2) - \text{logit}(-10) + \text{logit}(-10 + 1 + 2) - \text{logit}(-10 + 1) + \text{logit}(-10 + 2 + 3) - \text{logit}(-10 + 3) + \text{logit}(-10 + 2 + 4) - \text{logit}(-10 + 4) \right)$$
 
 #### **Feature 3 (x₃)**
 Contribution marginale moyenne :
-$$
-\phi_{x_3} = \frac{1}{4} \left( \text{logit}(-10 + 3) - \text{logit}(-10) + \text{logit}(-10 + 1 + 3) - \text{logit}(-10 + 1) + \text{logit}(-10 + 2 + 3) - \text{logit}(-10 + 2) + \text{logit}(-10 + 3 + 4) - \text{logit}(-10 + 4) \right)
-$$
+$$\phi_{x_3} = \frac{1}{4} \left( \text{logit}(-10 + 3) - \text{logit}(-10) + \text{logit}(-10 + 1 + 3) - \text{logit}(-10 + 1) + \text{logit}(-10 + 2 + 3) - \text{logit}(-10 + 2) + \text{logit}(-10 + 3 + 4) - \text{logit}(-10 + 4) \right)$$
 
 #### **Feature 4 (x₄)**
 Contribution marginale moyenne :
-$$
-\phi_{x_4} = \frac{1}{4} \left( \text{logit}(-10 + 4) - \text{logit}(-10) + \text{logit}(-10 + 1 + 4) - \text{logit}(-10 + 1) + \text{logit}(-10 + 2 + 4) - \text{logit}(-10 + 2) + \text{logit}(-10 + 3 + 4) - \text{logit}(-10 + 3) \right)
-$$
+$$\phi_{x_4} = \frac{1}{4} \left( \text{logit}(-10 + 4) - \text{logit}(-10) + \text{logit}(-10 + 1 + 4) - \text{logit}(-10 + 1) + \text{logit}(-10 + 2 + 4) - \text{logit}(-10 + 2) + \text{logit}(-10 + 3 + 4) - \text{logit}(-10 + 3) \right)$$
 
 ---
 ### **Résultat**
 Les valeurs de Shapley pour l'observation 1 sont :
-- **Feature 1 (x₁)** : $ \phi_{x_1} $
-- **Feature 2 (x₂)** : $ \phi_{x_2} $
-- **Feature 3 (x₃)** : $ \phi_{x_3} $
-- **Feature 4 (x₄)** : $ \phi_{x_4} $
+- **Feature 1 (x₁)** : $\phi_{x_1}$
+- **Feature 2 (x₂)** : $\phi_{x_2}$
+- **Feature 3 (x₃)** : $\phi_{x_3}$
+- **Feature 4 (x₄)** : $\phi_{x_4}$
 
 ---
 ---
